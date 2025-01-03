@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/server";
 import React from "react";
 import App from "@/server/App";
 import getScript from "@/server/getScript";
+import getLink from "@/server/getLink";
 
 export default function render(req, res)  {
     const componentHTML = ReactDOM.renderToString(<App/>);
@@ -10,6 +11,8 @@ export default function render(req, res)  {
 <head>
     <meta charset="UTF-8">
     <title>SSR</title>
+    
+    ${getLink()}
 </head>
 <body>
     <div id="root">${componentHTML}</div>

@@ -7,7 +7,7 @@ module.exports = {
         alias: {
             "@": path.resolve(__dirname, "./src"),
         },
-        extensions: [".ts", ".tsx", ".js", ".jsx"],
+        extensions: [".js", ".jsx", ".css"],
     },
     module: {
         rules: [
