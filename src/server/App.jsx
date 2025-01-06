@@ -1,11 +1,11 @@
 import React from 'react';
 import {StaticRouter} from "react-router-dom";
-import RouteApp from "@/router/RouteApp";
+import RouterApp from "@/router/RouterApp";
 
 function App({location, context}) {
     return (
         <StaticRouter location={location} context={context}>
-            <RouteApp/>
+            <RouterApp/>
         </StaticRouter>
     )
 }

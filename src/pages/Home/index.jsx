@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import * as styles from "./index.module.css";
 import pngUrl from '@/assets/1.jpg';
+import Header from "@/components/Header";
 
 function Home() {
     const [count, setCount] = useState(0);

@@ -13,6 +13,8 @@ function Header() {
         <div className={clientRendered ? styles.header : ""}>
             <Link to="/">首页</Link>
             <Link to="/movies">电影列表</Link>
+            <Link to="/detail/school">学校</Link>
+            <Link to="/detail/company">公司</Link>
         </div>
     )
 }

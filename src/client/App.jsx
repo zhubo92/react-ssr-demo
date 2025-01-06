@@ -1,12 +1,12 @@
 import React from 'react';
 import "../assets/global.css";
-import RouteApp from "@/router/RouteApp";
+import RouterApp from "@/router/RouterApp";
 import {BrowserRouter} from "react-router-dom";
 
 function App() {
     return (
         <BrowserRouter>
-            <RouteApp/>
+            <RouterApp/>
         </BrowserRouter>
     )
 }
