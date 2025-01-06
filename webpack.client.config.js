@@ -10,6 +10,7 @@ const clientConfig = {
     output: {
         path: path.resolve(__dirname, "./public"),
         filename: "js/bundle.[hash:5].js",
+        publicPath: "/"
     },
     plugins: [
         new CleanWebpackPlugin({
@@ -29,9 +30,16 @@ const clientConfig = {
                         loader: "css-loader",
                         options: {
                             modules: true,
-                        }
+                        },
                     }
                 ]
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                type: 'asset',
+                generator: {
+                    filename: "img/[name].[hash:5].[ext]",
+                },
             }
         ]
     }
