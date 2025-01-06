@@ -4,7 +4,7 @@ const {merge} = require("webpack-merge");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const clientConfig = {
+module.exports = merge(baseConfig, {
     devtool: "source-map",
     entry: "./src/client",
     output: {
@@ -29,7 +29,7 @@ const clientConfig = {
                     {
                         loader: "css-loader",
                         options: {
-                            modules: true,
+                            modules: /\.module\.css$/,
                         },
                     }
                 ]
@@ -43,6 +43,4 @@ const clientConfig = {
             }
         ]
     }
-};
-
-module.exports = merge(baseConfig, clientConfig);
+});

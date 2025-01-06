@@ -3,7 +3,7 @@ const baseConfig = require("./webpack.base.config");
 const {merge} = require("webpack-merge");
 const path = require("path");
 
-const serverConfig = {
+module.exports = merge(baseConfig, {
     entry: "./src/server",
     target: "node",
     externals: [nodeExternals()],
@@ -40,6 +40,4 @@ const serverConfig = {
             }
         ]
     }
-};
-
-module.exports = merge(baseConfig, serverConfig);
+});

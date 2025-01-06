@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import * as styles from "./index.css";
+import * as styles from "./index.module.css";
 import pngUrl from '@/assets/1.jpg';
 
 function Home() {
@@ -10,14 +10,14 @@ function Home() {
         setClientRendered(true);
     }, []);
 
-    const MyImg = clientRendered ? <img src={pngUrl} width={500} alt="" /> : "";
+    const MyImg = clientRendered ? <img src={pngUrl} width={200} alt="" /> : "";
 
     return (
         <div>
             <h1>首页1: {count}</h1>
-            {MyImg}
-            <div className={clientRendered ? styles.bg : ""}></div>
             <button className={clientRendered ? styles.beautifulButton : ""} onClick={() => setCount(count + 1)}>+1</button>
+            <div className={clientRendered ? styles.bg : ""}></div>
+            {MyImg}
         </div>
     );
 }

@@ -1,10 +1,13 @@
 import React from 'react';
-import Home from "@/pages/Home";
 import "../assets/global.css";
+import RouteApp from "@/router/RouteApp";
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
     return (
-        <Home/>
+        <BrowserRouter>
+            <RouteApp/>
+        </BrowserRouter>
     )
 }
 
