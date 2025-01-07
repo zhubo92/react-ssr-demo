@@ -1,16 +1,15 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import * as styles from "./index.module.css";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {ENV_TYPE} from "@/store/slices/envSlice";
 
 function Header() {
-    const [clientRendered, setClientRendered] = useState(false);
-
-    useEffect(() => {
-        setClientRendered(true);
-    }, []);
+    const env = useSelector((state) => state.env.type);
+    const isClient = env === ENV_TYPE.CLIENT;
 
     return (
-        <div className={clientRendered ? styles.header : ""}>
+        <div className={isClient ? styles.header : ""}>
             <Link to="/">首页</Link>
             <Link to="/movies">电影列表</Link>
             <Link to="/detail/school">学校</Link>

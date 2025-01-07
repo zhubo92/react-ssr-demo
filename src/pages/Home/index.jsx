@@ -1,24 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import * as styles from "./index.module.css";
 import pngUrl from '@/assets/1.jpg';
-import Header from "@/components/Header";
+import {useSelector} from "react-redux";
+import {ENV_TYPE} from "@/store/slices/envSlice";
 
 function Home() {
     const [count, setCount] = useState(0);
-    const [clientRendered, setClientRendered] = useState(false);
+    const env = useSelector((state) => state.env.type);
+    const isClient = env === ENV_TYPE.CLIENT;
 
-    useEffect(() => {
-        setClientRendered(true);
-    }, []);
-
-    const MyImg = clientRendered ? <img src={pngUrl} width={200} alt="" /> : "";
+    const MyImg = isClient ? <img src={pngUrl} width={200} alt="" /> : "";
 
     return (
         <div>
             <h1>首页: {count}</h1>
             <h1></h1>
-            <button className={clientRendered ? styles.beautifulButton : ""} onClick={() => setCount(count + 1)}>+1</button>
-            <div className={clientRendered ? styles.bg : ""}></div>
+            <button className={isClient ? styles.beautifulButton : ""} onClick={() => setCount(count + 1)}>+1</button>
+            <div className={isClient ? styles.bg : ""}></div>
             {MyImg}
         </div>
     );

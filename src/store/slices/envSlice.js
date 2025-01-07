@@ -1,18 +1,17 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 export const ENV_TYPE = {
-    PRODUCTION: 'production',
-    DEVELOPMENT: 'development'
+    SERVER: 'server',
+    CLIENT: 'client'
 }
 
 export const envSlice = createSlice({
     name: 'env',
     initialState: {
-        type: ENV_TYPE.DEVELOPMENT,
+        type: ENV_TYPE.SERVER,
     },
     reducers: {
         setEnv: (state, action) => {
-            if(!(action.payload in ENV_TYPE)) return;
             state.type = action.payload;
         },
     },
