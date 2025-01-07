@@ -15,6 +15,7 @@ function Header() {
             <Link to="/movies">电影列表</Link>
             <Link to="/detail/school">学校</Link>
             <Link to="/detail/company">公司</Link>
+            <Link to="/counter">计数器</Link>
         </div>
     )
 }

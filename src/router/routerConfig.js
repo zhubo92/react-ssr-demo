@@ -6,6 +6,7 @@ import Login from "@/pages/Login";
 import Detail from "@/pages/Detail";
 import Company from "@/pages/Detail/Company";
 import School from "@/pages/Detail/School";
+import Counter from "@/pages/Counter";
 
 export default [
     {
@@ -27,6 +28,10 @@ export default [
     {
         path: "/login",
         element: <Login/>,
+    },
+    {
+        path: "/counter",
+        element: <Counter/>,
     },
     {
         path: "*",

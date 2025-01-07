@@ -15,7 +15,8 @@ function Home() {
 
     return (
         <div>
-            <h1>首页1: {count}</h1>
+            <h1>首页: {count}</h1>
+            <h1></h1>
             <button className={clientRendered ? styles.beautifulButton : ""} onClick={() => setCount(count + 1)}>+1</button>
             <div className={clientRendered ? styles.bg : ""}></div>
             {MyImg}
