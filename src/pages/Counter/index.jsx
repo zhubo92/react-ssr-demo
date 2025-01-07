@@ -8,21 +8,9 @@ function Counter() {
 
     return (
         <div>
-            <div>
-                <button
-                    aria-label="Increment value"
-                    onClick={() => dispatch(increment())}
-                >
-                    加
-                </button>
-                <span style={{margin: "0 20px"}}>{count}</span>
-                <button
-                    aria-label="Decrement value"
-                    onClick={() => dispatch(decrement())}
-                >
-                    减
-                </button>
-            </div>
+            <button onClick={() => dispatch(increment())}>加</button>
+            <span style={{margin: "0 20px"}}>{count}</span>
+            <button onClick={() => dispatch(decrement())}>减</button>
         </div>
     );
 }
