@@ -1,10 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {counter} from "@/store/initialState";
 
 export const counterSlice = createSlice({
     name: 'counter',
-    initialState: {
-        value: 0,
-    },
+    initialState: counter,
     reducers: {
         increment: (state) => {
             // Redux Toolkit 允许我们在 reducers 中编写 mutating 逻辑。

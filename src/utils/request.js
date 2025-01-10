@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const request = axios.create({
-    baseURL: "/api",
+    baseURL: typeof window === "undefined" ? "http://localhost:3000/api" : "/api",
 });
 
 request.interceptors.request.use(config => {

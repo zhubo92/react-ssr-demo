@@ -1,22 +1,22 @@
 import React, {useEffect} from 'react';
 import {Outlet} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {selectIsClient} from "@/store/slices/envSlice";
 import {fetchMovies, selectAllMovies, selectMoviesError, selectMoviesStatus} from "@/store/slices/moviesSlice";
+import store from "@/store";
+
+Movies.loadData = (store) => {
+    return store.dispatch(fetchMovies({page: 12, pageSize: 23}));
+}
 
 function Movies() {
-    const isClient = useSelector(selectIsClient);
-    const moviesData = useSelector(selectAllMovies);
     const dispatch = useDispatch();
+    const moviesData = useSelector(selectAllMovies);
     const moviesStatus = useSelector(selectMoviesStatus);
     const moviesError = useSelector(selectMoviesError);
 
     useEffect(() => {
-        if (isClient) dispatch(fetchMovies({
-            page: 3,
-            pageSize: 151
-        }));
-    }, [isClient]);
+        if(window.requestPath !== "/movies") Movies.loadData(store);
+    }, []);
 
     let content;
 

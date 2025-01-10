@@ -1,5 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {getMoviesApi} from "@/api";
+import {movies} from "@/store/initialState";
 
 export const fetchMovies = createAsyncThunk(
     'movies/fetchMovies',
@@ -11,27 +12,21 @@ export const fetchMovies = createAsyncThunk(
 
 export const moviesSlice = createSlice({
     name: "movies",
-    initialState: {
-        movies: [],
-        status: "idle", // idle空闲 loading请求中 completed请求成功 failed请求失败
-        error: null,
-    },
+    initialState: movies,
     reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(fetchMovies.pending, (state, action) => {
-                console.log("pending")
                 state.status = "loading";
                 state.movies = [];
+                state.error = null;
             })
             .addCase(fetchMovies.fulfilled, (state, action) => {
-                console.log("fulfilled", action.payload)
                 state.status = "completed";
                 state.movies = action.payload;
+                state.error = null;
             })
             .addCase(fetchMovies.rejected, (state, action) => {
-                console.log("rejected");
-
                 state.status = "failed";
                 state.movies = [];
                 state.error = action.error.message ?? "Unknown error";

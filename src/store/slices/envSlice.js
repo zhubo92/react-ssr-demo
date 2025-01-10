@@ -1,10 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {env} from "@/store/initialState";
 
 export const envSlice = createSlice({
     name: 'env',
-    initialState: {
-        isClient: false,
-    },
+    initialState: env,
     reducers: {
         setEnv: (state, action) => {
             state.isClient = action.payload;
