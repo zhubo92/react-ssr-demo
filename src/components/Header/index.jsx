@@ -2,9 +2,10 @@ import React from "react";
 import * as styles from "./index.module.css";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {selectIsClient} from "@/store/slices/envSlice";
 
 function Header() {
-    const isClient = useSelector((state) => state.env.isClient);
+    const isClient = useSelector(selectIsClient);
 
     return (
         <div className={isClient ? styles.header : ""}>

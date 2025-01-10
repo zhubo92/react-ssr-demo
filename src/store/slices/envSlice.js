@@ -12,6 +12,8 @@ export const envSlice = createSlice({
     },
 });
 
+export const selectIsClient = (state) => state.env.isClient;
+
 export const {setEnv} = envSlice.actions;
 
 export default envSlice.reducer;

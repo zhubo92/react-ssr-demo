@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import * as styles from "./index.module.css";
 import pngUrl from '@/assets/1.jpg';
 import {useSelector} from "react-redux";
+import {selectIsClient} from "@/store/slices/envSlice";
 
 function Home() {
     const [count, setCount] = useState(0);
-    const isClient = useSelector((state) => state.env.isClient);
+    const isClient = useSelector(selectIsClient);
 
     const MyImg = isClient ? <img src={pngUrl} width={200} alt="" /> : "";
 

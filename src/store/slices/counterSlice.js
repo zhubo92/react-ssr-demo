@@ -21,6 +21,8 @@ export const counterSlice = createSlice({
     },
 });
 
+export const selectCount = (state) => state.counter.value;
+
 // 为每个 case reducer 函数生成 Action creators
 export const {increment, decrement, incrementByAmount} = counterSlice.actions;
 
