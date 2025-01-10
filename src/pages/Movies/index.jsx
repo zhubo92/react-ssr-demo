@@ -1,15 +1,14 @@
 import React, {useEffect} from 'react';
 import {Outlet} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector, useStore} from "react-redux";
 import {fetchMovies, selectAllMovies, selectMoviesError, selectMoviesStatus} from "@/store/slices/moviesSlice";
-import store from "@/store";
 
 Movies.loadData = (store) => {
     return store.dispatch(fetchMovies({page: 12, pageSize: 23}));
 }
 
 function Movies() {
-    const dispatch = useDispatch();
+    const store = useStore();
     const moviesData = useSelector(selectAllMovies);
     const moviesStatus = useSelector(selectMoviesStatus);
     const moviesError = useSelector(selectMoviesError);

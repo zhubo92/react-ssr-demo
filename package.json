@@ -5,7 +5,11 @@
     "dev": "npm-run-all --parallel dev:**",
     "dev:start": "nodemon --watch dist --exec node dist/server",
     "dev:build:server": "webpack --config webpack.server.config.js",
-    "dev:build:client": "webpack --config webpack.client.config.js"
+    "dev:build:client": "webpack --config webpack.client.config.js",
+    "pro": "npm-run-all --parallel pro:**",
+    "pro:start": "nodemon --watch dist --exec node dist/server",
+    "pro:build:server": "webpack --config webpack.server.config.js --mode production",
+    "pro:build:client": "webpack --config webpack.client.config.js --mode production"
   },
   "keywords": [],
   "author": "",

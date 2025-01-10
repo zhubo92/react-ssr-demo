@@ -1,8 +1,7 @@
 import getLink from "@/server/getLink";
 import getScript from "@/server/getScript";
-import store from "@/store";
 
-export default function getHTML(componentHTML, path) {
+export default function getHTML(componentHTML, path, store) {
     return `<!DOCTYPE html>
 <html lang="en">
 <head>

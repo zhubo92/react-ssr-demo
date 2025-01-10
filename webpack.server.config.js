@@ -28,15 +28,11 @@ module.exports = merge(baseConfig, {
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/,
-                use: [
-                    {
-                        loader: "file-loader",
-                        options: {
-                            name: "img/[name].[hash:5].[ext]",
-                            emitFile: false
-                        }
-                    }
-                ]
+                type: 'asset',
+                generator: {
+                    filename: "img/[name].[hash:5].[ext]",
+                    emit: false,
+                },
             }
         ]
     }

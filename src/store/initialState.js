@@ -10,7 +10,7 @@ let initialState = {
         status: "idle", // idle空闲 loading请求中 completed请求成功 failed请求失败
         error: null,
     },
-}
+};
 
 if(typeof window !== 'undefined' && window.storeState) {
     initialState = window.storeState;
